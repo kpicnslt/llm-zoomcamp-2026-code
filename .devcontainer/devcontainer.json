@@ -1,0 +1,4 @@
+{
+    "name": "LLM Zoomcamp",
+    "postStartCommand": "docker start pgvector || true"
+}
