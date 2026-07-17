@@ -15,6 +15,6 @@ if st.button("Ask"):
 
         record = assistant.last_call
         st.write(f"Response time: {record.response_time:.2f}s")
-        st.write(f"Iput tokens: {record.prompt_tokens}")
+        st.write(f"Input tokens: {record.prompt_tokens}")
         st.write(f"Output tokens: {record.completion_tokens}")
         st.write(f"Cost: ${record.cost:.4f}")
