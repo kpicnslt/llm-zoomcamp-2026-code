@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 from ingest import load_faq_data, build_index
-from rag_helper import RAGBase
-# from metrics import RAGWithMetrics
+from metrics import RAGWithMetrics
 # from db_save import save_conversation
 
 
@@ -14,12 +13,7 @@ def create_assistant():
 
     documents = load_faq_data()
     index = build_index(documents)
-
-    # return RAGWithMetrics(
-    #     index=index,
-    #     llm_client=OpenAI()
-    # )
-
+  
     return RAGBase(
         index=index,
         llm_client=OpenAI(),
