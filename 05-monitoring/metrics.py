@@ -34,7 +34,7 @@ class RAGWithMetrics(RAGBase):
         response = self._call_llm(prompt)
         response_time = time.time() - start_time
         self._log_response(prompt, response, response_time)
-        return response.
+        return response
         
     def _call_llm(self, prompt):
         input_messages = [
