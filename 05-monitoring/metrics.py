@@ -17,10 +17,10 @@ class LLMCallRecord:
     cost: float
     timestamp: datetime = field(default_factory=datetime.now)
 
-calculate_cost def(model, usage):
- cost = 0
+def calculate_cost(model, usage):
+    cost = 0
     if "gpt-5.4-mini" in model:
- cost = (usage.input_tokens * 0.15 + usage.output_tokens * 0.60) / 1_000_000
+        cost = (usage.input_tokens * 0.15 + usage.output_tokens * 0.60) / 1_000_000
     return cost
 
 class RAGWithMetrics(RAGBase):
