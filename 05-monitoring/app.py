@@ -1,5 +1,6 @@
 import streamlit as st
 from assistant import create_assistant
+from db_save import save_conversation
 
 assistant = create_assistant()
 
@@ -18,3 +19,6 @@ if st.button("Ask"):
         st.write(f"Input tokens: {record.prompt_tokens}")
         st.write(f"Output tokens: {record.completion_tokens}")
         st.write(f"Cost: ${record.cost:.4f}")
+        
+        conversation_id = save_conversation(record, user_input, "llm-zoomcamp")
+        st.session_state.conversation_id = conversation_id
